@@ -19,9 +19,9 @@ function App() {
       <ToDoTask task="Task 3" />
       <Header />
       <InspirationalMessage />
-      <TaDaTask />
-      <TaDaTask />
-      <TaDaTask />
+      <TaDaTask taDaTask="Task X"/>
+      <TaDaTask taDaTask="Task Y"/>
+      <TaDaTask taDaTask="Task Z"/>
         
       
     </div>

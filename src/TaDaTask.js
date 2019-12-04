@@ -5,7 +5,7 @@ class TaDaTask extends React.Component {
         return (
             <div className="row">
                 <div className="col-5">
-                    <p>To Do 1</p>
+                    <p>{this.props.taDaTask}</p>
                 </div>
                 <div className="col-3">
                     <div className="btn-group" role="group" aria-label="Ta Da List Emoticon Buttons">
