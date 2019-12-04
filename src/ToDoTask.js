@@ -5,7 +5,7 @@ class ToDoTask extends React.Component {
         return (
             <div className="row">
                 <div className="col-6">
-                    <p>To Do 1</p>
+                    <p>{this.props.task}</p>
                 </div>
                 <div className="col-6">
                     <div className="btn-group" role="group" aria-label="To Do List Buttons">

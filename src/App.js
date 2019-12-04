@@ -14,9 +14,9 @@ function App() {
       <Header />
       <EnterToDoTask />
       <TaskCount />
-      <ToDoTask />
-      <ToDoTask />
-      <ToDoTask />
+      <ToDoTask task="Task 1"/>
+      <ToDoTask task="Task 2"/>
+      <ToDoTask task="Task 3" />
       <Header />
       <InspirationalMessage />
       <TaDaTask />
