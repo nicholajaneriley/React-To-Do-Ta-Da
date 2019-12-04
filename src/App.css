@@ -1,6 +1,4 @@
-.App {
-  text-align: center;
-}
+
 
 .App-logo {
   height: 40vmin;
@@ -23,4 +21,19 @@
 
 .ta-da {
   min-width: 340px;
+}
+
+body {
+  background-color: rgba(120, 230, 230, 0.493);
+  text-align: center;
+}
+
+.App{
+  background-color: white;
+  margin: 30px;
+  min-height: 88vh;
+}
+
+h2 {
+  margin-top: 10px;
 }
