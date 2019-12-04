@@ -5,6 +5,8 @@ import EnterToDoTask from "./EnterToDoTask";
 import TaskCount from "./TaskCount";
 import ToDoTask from "./ToDoTask";
 import InspirationalMessage from "./InspirationalMessage";
+import TaDaTask from "./TaDaTask";
+
 
 function App() {
   return (
@@ -14,8 +16,12 @@ function App() {
       <TaskCount />
       <ToDoTask />
       <ToDoTask />
+      <ToDoTask />
       <Header />
       <InspirationalMessage />
+      <TaDaTask />
+      <TaDaTask />
+      <TaDaTask />
         
       
     </div>
