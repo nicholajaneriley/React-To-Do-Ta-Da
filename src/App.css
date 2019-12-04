@@ -37,3 +37,11 @@ body {
 h2 {
   margin-top: 10px;
 }
+
+.left-space {
+  margin-left: 5px;
+}
+
+.task-count--message {
+  margin-top: 10px;
+}
