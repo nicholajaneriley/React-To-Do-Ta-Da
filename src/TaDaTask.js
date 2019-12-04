@@ -3,7 +3,7 @@ import React from 'react';
 class TaDaTask extends React.Component {
     render() {
         return (
-            <div className="row ta-da">
+            <div className="row">
                 <div className="col-5">
                     <p>{this.props.taDaTask}</p>
                 </div>

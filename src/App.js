@@ -11,20 +11,27 @@ import TaDaTask from "./TaDaTask";
 function App() {
   return (
     <div className="App">
-      <Header header="To Do to Ta Da!" />
-      <EnterToDoTask />
-      <TaskCount />
       <div className="container">
-        <ToDoTask task="Task 1" />
-        <ToDoTask task="Task 2" />
-        <ToDoTask task="Task 3" />
-        <Header header="Ta Da!" />
-        <InspirationalMessage />
-        <TaDaTask taDaTask="Task X" />
-        <TaDaTask taDaTask="Task Y" />
-        <TaDaTask taDaTask="Task Z" />
+        <div className="row">
+          <div className="col-12 col-sm-6 ta-da">
+            <Header header="To Do to Ta Da!" />
+            <EnterToDoTask />
+            <TaskCount />
+            <ToDoTask task="Task 1" />
+            <ToDoTask task="Task 2" />
+            <ToDoTask task="Task 3" />
+          </div>
+          <div className="col-12 col-sm-6 ta-da">
+            <Header header="Ta Da!" />
+            <InspirationalMessage />
+            <TaDaTask taDaTask="Task X" />
+            <TaDaTask taDaTask="Task Y" />
+            <TaDaTask taDaTask="Task Z" />
+          </div>
+        </div>
       </div>
     </div>
+
   );
 }
 
