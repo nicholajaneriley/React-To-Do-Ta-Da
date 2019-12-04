@@ -1,6 +1,6 @@
 import React from 'react';
 
-class ToDoTask extends React.Component {
+class EnterToDoTask extends React.Component {
     render () {
         return (
             <p>Enter a task</p>
@@ -8,4 +8,4 @@ class ToDoTask extends React.Component {
     }
 }
 
-export default ToDoTask;
+export default EnterToDoTask;
