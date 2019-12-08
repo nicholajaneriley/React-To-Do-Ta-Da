@@ -45,3 +45,5 @@ h2 {
 .task-count--message {
   margin-top: 10px;
 }
+
+::-webkit-datetime-edit {border: 0;}
