@@ -9,18 +9,18 @@ class TaDaTask extends React.Component {
                 </div>
                 <div className="col-3">
                     <div className="btn-group" role="group" aria-label="Ta Da List Emoticon Buttons">
-                        <button type="button" class="btn btn-outline-info btn-sm"><i class="fa fa-smile-o"
+                        <button type="button" className="btn btn-outline-info btn-sm"><i className="fa fa-smile-o"
                             aria-hidden="true"></i></button>
-                        <button type="button" class="btn btn-outline-info btn-sm"><i class="fa fa-meh-o"
+                        <button type="button" className="btn btn-outline-info btn-sm"><i className="fa fa-meh-o"
                             aria-hidden="true"></i></button>
-                        <button type="button" class="btn btn-outline-info btn-sm"><i class="fa fa-frown-o"
+                        <button type="button" className="btn btn-outline-info btn-sm"><i className="fa fa-frown-o"
                             aria-hidden="true"></i></button>
                     </div>
                 </div>
                 <div className="col-4">
                     <div className="btn-group" role="group" aria-label="Ta Da List Buttons">
-                        <button type="button" class="btn btn-outline-info btn-sm"><i class="fa fa-check" aria-hidden="true"></i></button>
-                        <button type="button" class="btn btn-outline-info btn-sm"><i class="fa fa-times" aria-hidden="true"></i></button>
+                        <button type="button" className="btn btn-outline-info btn-sm"><i className="fa fa-check" aria-hidden="true"></i></button>
+                        <button type="button" className="btn btn-outline-info btn-sm"><i className="fa fa-times" aria-hidden="true"></i></button>
                     </div>
                 </div>
             </div>
