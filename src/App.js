@@ -37,7 +37,7 @@ class App extends React.Component {
               <EnterToDoTask />
               <TaskCount count={toDoTask.length}/>
               {toDoTask.map(task => {
-            return <ToDoTask key={task.id} task={task.task} />
+            return <ToDoTask key={task.id} task={task.task} date={task.date} />
           })}
             </div>
             <div className="col-12 col-sm-6 ta-da">

@@ -1,11 +1,13 @@
 import React from 'react';
+import './ToDoTask.css';
 
 class ToDoTask extends React.Component {
     render() {
         return (
             <div className="row">
                 <div className="col-6">
-                    <p>{this.props.task}</p>
+                    <p className="tooltipone">{this.props.task} <span className="tooltiptext">{this.props.date}</span></p>
+                    
                 </div>
                 <div className="col-6">
                     <div className="btn-group" role="group" aria-label="To Do List Buttons">
