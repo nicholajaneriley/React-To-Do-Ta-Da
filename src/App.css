@@ -47,3 +47,7 @@ h2 {
 }
 
 ::-webkit-datetime-edit {border: 0;}
+
+.strikethrough {
+  text-decoration: line-through;
+}
