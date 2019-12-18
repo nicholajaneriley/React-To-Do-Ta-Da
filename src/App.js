@@ -1,4 +1,5 @@
 import React from 'react';
+import uuid from "uuid/v4";
 import './App.css';
 import Header from "./Header";
 import EnterToDoTask from "./EnterToDoTask";
@@ -10,12 +11,12 @@ import TaDaTask from "./TaDaTask";
 class App extends React.Component {
   state = {
     tasks: [
-      { id: 1, task: "Task One", date: "2019-12-15", complete: false },
-      { id: 2, task: "Task Two", date: "2019-12-15", complete: false },
-      { id: 3, task: "Task Three", date: "2019-12-15", complete: false },
-      { id: 4, task: "Task X", date: "2019-12-15", complete: true },
-      { id: 5, task: "Task Y", date: "2019-12-15", complete: true },
-      { id: 6, task: "Task Z", date: "2019-12-15", complete: true },
+      { id: uuid(), task: "Task One", date: "2019-12-15", complete: false },
+      { id: uuid(), task: "Task Two", date: "2019-12-15", complete: false },
+      { id: uuid(), task: "Task Three", date: "2019-12-15", complete: false },
+      { id: uuid(), task: "Task X", date: "2019-12-15", complete: true },
+      { id: uuid(), task: "Task Y", date: "2019-12-15", complete: true },
+      { id: uuid(), task: "Task Z", date: "2019-12-15", complete: true },
     ],
   }
   render() {
