@@ -54,7 +54,7 @@ class App extends React.Component {
     const filteredTasks = this.state.tasks.map(completeTask => {
       console.log(completeTask.id);
       if (completeTask.id === id) {
-        completeTask.complete = true;
+        completeTask.complete = !completeTask.complete;
       }
       return completeTask;
     });
@@ -95,6 +95,7 @@ render() {
             <InspirationalMessage />
             {taDaTask.map(task => {
               return <TaDaTask
+               changeCompleteFunc={this.changeComplete}
                 deleteTaskFunc={this.deleteTask}
                 key={task.id} taDaTask={task.task} id={task.id}/>
             })}
