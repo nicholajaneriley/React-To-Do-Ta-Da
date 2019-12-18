@@ -19,6 +19,27 @@ class App extends React.Component {
       { id: uuid(), task: "Task Z", date: "2019-12-15", complete: true },
     ],
   }
+
+  addTask = (task, date) => {
+    console.log(task, date);
+    const newTask = {
+      id: uuid(),
+      task: task,
+      complete: false,
+      date: date,
+    };
+
+    //copy the array of tasks from state using slice
+    const copy = this.state.tasks.slice();
+    //push that object into the array of tasks
+    copy.push(newTask);
+    //make sure state is updated
+    this.setState({
+      tasks: copy
+    });
+  }
+
+
   render() {
 
     const toDoTask = this.state.tasks.filter(task => {
@@ -35,18 +56,18 @@ class App extends React.Component {
           <div className="row">
             <div className="col-12 col-sm-6 ta-da">
               <Header header="To Do to Ta Da!" />
-              <EnterToDoTask />
-              <TaskCount count={toDoTask.length}/>
+              <EnterToDoTask addNewTaskFunc={this.addTask} />
+              <TaskCount count={toDoTask.length} />
               {toDoTask.map(task => {
-            return <ToDoTask key={task.id} task={task.task} date={task.date} />
-          })}
+                return <ToDoTask key={task.id} task={task.task} date={task.date} />
+              })}
             </div>
             <div className="col-12 col-sm-6 ta-da">
               <Header header="Ta Da!" />
               <InspirationalMessage />
               {taDaTask.map(task => {
-            return <TaDaTask key={task.id} taDaTask={task.task} />
-          })}
+                return <TaDaTask key={task.id} taDaTask={task.task} />
+              })}
             </div>
           </div>
         </div>
@@ -55,4 +76,4 @@ class App extends React.Component {
   }
 }
 
-  export default App;
+export default App;
