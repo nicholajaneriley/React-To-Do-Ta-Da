@@ -41,7 +41,7 @@ class App extends React.Component {
 
   deleteTask = (id) => {
     const filteredTasks = this.state.tasks.filter(keepTask => {
-      console.log(keepTask.id,id);
+      console.log(keepTask.id);
       return keepTask.id !== id;
     });
     console.log(filteredTasks);
@@ -50,10 +50,18 @@ class App extends React.Component {
     });
   };
 
-  changeComplete = (complete) => {
+  changeComplete = (id) => {
+    const filteredTasks = this.state.tasks.map(completeTask => {
+      console.log(completeTask.id);
+      if (completeTask.id === id) {
+        completeTask.complete = true;
+      }
+      return completeTask;
+    });
+    console.log(filteredTasks);
     this.setState({
-      complete: true,
-    })
+      tasks: filteredTasks
+    });
   };
 
 

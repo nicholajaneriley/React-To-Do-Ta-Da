@@ -8,7 +8,7 @@ class ToDoTask extends React.Component {
     }
 
     changeComplete = () => {
-        this.props.changeCompleteFunc(this.props.complete);
+        this.props.changeCompleteFunc(this.props.id);
     }
 
     render() {
