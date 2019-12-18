@@ -19,7 +19,7 @@ class TaDaTask extends React.Component {
                 </div>
                 <div className="col-4">
                     <div className="btn-group" role="group" aria-label="Ta Da List Buttons">
-                        <button type="button" className="btn btn-outline-info btn-sm"><i className="fa fa-check" aria-hidden="true"></i></button>
+                        <button type="button" className="btn btn-outline-info btn-sm" onClick={this.handleDelete}><i className="fa fa-check" aria-hidden="true"></i></button>
                         <button type="button" className="btn btn-outline-info btn-sm"><i className="fa fa-times" aria-hidden="true"></i></button>
                     </div>
                 </div>

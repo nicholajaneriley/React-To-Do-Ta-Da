@@ -25,8 +25,8 @@ class App extends React.Component {
     const newTask = {
       id: uuid(),
       task: task,
-      complete: false,
       date: date,
+      complete: false,
     };
 
     //copy the array of tasks from state using slice
@@ -39,41 +39,63 @@ class App extends React.Component {
     });
   }
 
-
-  render() {
-
-    const toDoTask = this.state.tasks.filter(task => {
-      return task.complete === false;
+  deleteTask = (id) => {
+    const filteredTasks = this.state.tasks.filter(keepTask => {
+      console.log(keepTask.id,id);
+      return keepTask.id !== id;
     });
-
-    const taDaTask = this.state.tasks.filter(task => {
-      return task.complete === true;
+    console.log(filteredTasks);
+    this.setState({
+      tasks: filteredTasks
     });
+  };
 
-    return (
-      <div className="App">
-        <div className="container">
-          <div className="row">
-            <div className="col-12 col-sm-6 ta-da">
-              <Header header="To Do to Ta Da!" />
-              <EnterToDoTask addNewTaskFunc={this.addTask} />
-              <TaskCount count={toDoTask.length} />
-              {toDoTask.map(task => {
-                return <ToDoTask key={task.id} task={task.task} date={task.date} />
-              })}
-            </div>
-            <div className="col-12 col-sm-6 ta-da">
-              <Header header="Ta Da!" />
-              <InspirationalMessage />
-              {taDaTask.map(task => {
-                return <TaDaTask key={task.id} taDaTask={task.task} />
-              })}
-            </div>
+  changeComplete = (complete) => {
+    this.setState({
+      complete: true,
+    })
+  };
+
+
+render() {
+
+  const toDoTask = this.state.tasks.filter(task => {
+    return task.complete === false;
+  });
+
+  const taDaTask = this.state.tasks.filter(task => {
+    return task.complete === true;
+  });
+
+  return (
+    <div className="App">
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-sm-6 ta-da">
+            <Header header="To Do to Ta Da!" />
+            <EnterToDoTask addNewTaskFunc={this.addTask} />
+            <TaskCount count={toDoTask.length} />
+            {toDoTask.map(task => {
+              return <ToDoTask
+                changeCompleteFunc={this.changeComplete}
+                deleteTaskFunc={this.deleteTask}
+                key={task.id} task={task.task} date={task.date} id={task.id} />
+            })}
+          </div>
+          <div className="col-12 col-sm-6 ta-da">
+            <Header header="Ta Da!" />
+            <InspirationalMessage />
+            {taDaTask.map(task => {
+              return <TaDaTask
+                deleteTaskFunc={this.deleteTask}
+                key={task.id} taDaTask={task.task} id={task.id}/>
+            })}
           </div>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+}
 }
 
 export default App;
