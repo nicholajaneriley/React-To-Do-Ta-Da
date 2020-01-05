@@ -11,12 +11,12 @@ import TaDaTask from "./TaDaTask";
 class App extends React.Component {
   state = {
     tasks: [
-      { id: uuid(), task: "Task One", date: "2019-12-15", complete: false },
-      { id: uuid(), task: "Task Two", date: "2019-12-15", complete: false },
-      { id: uuid(), task: "Task Three", date: "2019-12-15", complete: false },
-      { id: uuid(), task: "Task X", date: "2019-12-15", complete: true },
-      { id: uuid(), task: "Task Y", date: "2019-12-15", complete: true },
-      { id: uuid(), task: "Task Z", date: "2019-12-15", complete: true },
+      { id: uuid(), task: "Task One", date: "2019-12-15", complete: false, rating: 0 },
+      { id: uuid(), task: "Task Two", date: "2019-12-15", complete: false, rating: 0},
+      { id: uuid(), task: "Task Three", date: "2019-12-15", complete: false, rating: 0 },
+      { id: uuid(), task: "Task X", date: "2019-12-15", complete: true, rating: 1 },
+      { id: uuid(), task: "Task Y", date: "2019-12-15", complete: true, rating: 2, emotion: "meh" },
+      { id: uuid(), task: "Task Z", date: "2019-12-15", complete: true, rating: 3, emotion: "smile" },
     ],
   }
 
@@ -27,6 +27,7 @@ class App extends React.Component {
       task: task,
       date: date,
       complete: false,
+      rating: 0
     };
 
     //copy the array of tasks from state using slice
@@ -64,6 +65,21 @@ class App extends React.Component {
     });
   };
 
+  updateEmotion = (id, emotion) => {
+    const filteredTasks = this.state.tasks.map(completeTask => {
+      console.log(completeTask.id);
+      if (completeTask.id === id) {
+        completeTask.emotion = emotion;
+      }
+      return completeTask;
+    });
+    console.log(filteredTasks);
+    this.setState({
+      tasks: filteredTasks
+    });
+  };
+
+
 
 render() {
 
@@ -97,7 +113,8 @@ render() {
               return <TaDaTask
                changeCompleteFunc={this.changeComplete}
                 deleteTaskFunc={this.deleteTask}
-                key={task.id} taDaTask={task.task} id={task.id}/>
+                updateEmotionFunc={this.updateEmotion}
+                key={task.id} taDaTask={task.task} id={task.id} rating={task.rating} emotion={task.emotion}/>
             })}
           </div>
         </div>
