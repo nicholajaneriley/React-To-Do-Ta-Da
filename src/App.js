@@ -79,6 +79,11 @@ class App extends React.Component {
     });
   };
 
+  promoteTask = (id) => {
+    
+
+  };
+
 
 
 render() {
@@ -103,6 +108,7 @@ render() {
               return <ToDoTask
                 changeCompleteFunc={this.changeComplete}
                 deleteTaskFunc={this.deleteTask}
+                promoteTaskFunc={this.promoteTask}
                 key={task.id} task={task.task} date={task.date} id={task.id} />
             })}
           </div>
