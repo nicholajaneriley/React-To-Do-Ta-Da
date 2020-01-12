@@ -3,7 +3,7 @@ import React from 'react';
 class EnterToDoTask extends React.Component {
     state = {
         task: "",
-        date: "2019-12-16"
+        date: "new Date().getDate()",
     };
 
     updateTask = (event) => {
@@ -27,7 +27,7 @@ class EnterToDoTask extends React.Component {
 
         this.setState({
             task: "",
-            date: "2019-12-16"
+            date: "new Date().getDate()"
         })
     };
 
