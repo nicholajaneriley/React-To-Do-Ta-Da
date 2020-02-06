@@ -7,7 +7,7 @@ import TaskCount from "./TaskCount";
 import ToDoTask from "./ToDoTask";
 import InspirationalMessage from "./InspirationalMessage";
 import TaDaTask from "./TaDaTask";
-import {reactDate} from './Date.js';
+import { reactDate } from './Date.js';
 
 class App extends React.Component {
   state = {
@@ -17,8 +17,8 @@ class App extends React.Component {
   componentDidMount() {
     axios.get("https://v3kl6yt9zd.execute-api.eu-west-1.amazonaws.com/dev/todotada")
       .then((response) => {
-       // const tasks = response.data.task;
-      //  
+        // const tasks = response.data.task;
+        //  
 
         const tasks = response.data.task.map(task => {
           task.date = reactDate(new Date(task.date));
@@ -50,7 +50,7 @@ class App extends React.Component {
         const copy = this.state.tasks.slice();
         // turns boolean sql value from 1 to true or can map the get data in the backend instead 
         // newDev.available = newDev.available === true ? 1 : 0;
-       // newTask.date = new Date(newTask.date).toISOString();
+        // newTask.date = new Date(newTask.date).toISOString();
         copy.push(newTask);
         console.log(copy);
         this.setState({
@@ -80,8 +80,12 @@ class App extends React.Component {
   };
 
   changeComplete = id => {
+    const completed = this.state.tasks.filter(task => {
+      return task.id === id;
+    })[0].completed;
+    
     axios.put(`https://v3kl6yt9zd.execute-api.eu-west-1.amazonaws.com/dev/todotada/${id}`, {
-      completed: true
+      completed: !completed
     })
       .then(() => {
         const filteredTasks = this.state.tasks.map(completeTask => {
@@ -100,19 +104,27 @@ class App extends React.Component {
       });
   };
 
-  /*updateEmotion = (id, emotion) => {
-    const filteredTasks = this.state.tasks.map(completeTask => {
-      console.log(completeTask.id);
-      if (completeTask.id === id) {
-        completeTask.emotion = emotion;
-      }
-      return completeTask;
-    });
-    console.log(filteredTasks);
-    this.setState({
-      tasks: filteredTasks
-    });
-  }; */
+  updateEmotion = (id, emotion) => {
+    axios.put(`https://v3kl6yt9zd.execute-api.eu-west-1.amazonaws.com/dev/todotada/${id}`, {
+      emotion
+    })
+      .then(() => {
+        const filteredTasks = this.state.tasks.map(completeTask => {
+          console.log(completeTask.id);
+          if (completeTask.id === id) {
+            completeTask.emotion = emotion;
+          }
+          return completeTask;
+        });
+
+        this.setState({
+          tasks: filteredTasks
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
 
 
   render() {
