@@ -1,9 +1,10 @@
 import React from 'react';
+import {reactDate} from './Date.js';
 
 class EnterToDoTask extends React.Component {
     state = {
         task: "",
-        date: "new Date().getDate()",
+        date: reactDate(new Date()),
     };
 
     updateTask = (event) => {
@@ -27,7 +28,7 @@ class EnterToDoTask extends React.Component {
 
         this.setState({
             task: "",
-            date: "new Date().getDate()"
+            date: reactDate(new Date()),
         })
     };
 

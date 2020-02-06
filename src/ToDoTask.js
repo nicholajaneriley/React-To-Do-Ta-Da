@@ -1,5 +1,6 @@
 import React from 'react';
 import './ToDoTask.css';
+import {formatDate} from './Date.js';
 
 class ToDoTask extends React.Component {
 
@@ -15,20 +16,6 @@ class ToDoTask extends React.Component {
         this.props.promoteTaskFunc(this.props.id);
     }
 
-    formatDate = (date)  => {
-        var d = new Date(date),
-            month = '' + (d.getMonth() + 1),
-            day = '' + d.getDate(),
-            year = d.getFullYear();
-    
-        if (month.length < 2) 
-            month = '0' + month;
-        if (day.length < 2) 
-            day = '0' + day;
-    
-        return [day, month, year].join('/');
-    }
-
     render() {
         return (
             <div className="row">
@@ -36,7 +23,7 @@ class ToDoTask extends React.Component {
                     <p className="tooltipone">{this.props.task} 
                     <span 
                     className="tooltiptext">
-                        {this.formatDate(this.props.date)}
+                        {formatDate(this.props.date)}
                     </span>
                     </p>
 
