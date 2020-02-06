@@ -66,7 +66,7 @@ class App extends React.Component {
     axios.delete(`https://v3kl6yt9zd.execute-api.eu-west-1.amazonaws.com/dev/todotada/${id}`)
       .then(() => {
         const filteredTasks = this.state.tasks.filter(keepTask => {
-          if (keepTask === id) return true;
+          if (keepTask.id !== id) return true;
           else return false;
         });
 
